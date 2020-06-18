@@ -8,7 +8,7 @@
   <tr><td>3.</td><td>Low Fidelity</td><td>Link</td></tr>
   <tr><td>4.</td><td>Test Plan</td><td>Link</td></tr>
   <tr><td>5.</td><td>Field Testing</td><td>Link</td></tr>
-  <tr><td>6.</td><td>Poster</td><td>Link</td></tr>
+  <tr><td>6.</td><td>Poster</td><td>https://github.com/SilentHlive/finalproject/blob/master/documentation/project2poster.pdf</td></tr>
 </table>
 
 
