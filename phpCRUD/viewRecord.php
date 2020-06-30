@@ -15,7 +15,7 @@ if(isset($_GET["tablename"]) && !empty(trim($_GET["tablename"]))){
     <meta charset="UTF-8">
   <link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico" />
 
-<title>PHP CRUD GENERATOR</title>
+<?php include "title.php";?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <style>
@@ -89,12 +89,51 @@ padding-right:10px;
   font-family: "Times New Roman", Times, serif;
 font-size: 20px;
 }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
    </style>
 </head>
 <body>
 <header><div>
   
-  <h2 align="center"> PHP CRUD GENERATOR</h2></div>
+  <?php include "h2.php";?></div>
 </header>
 <section align="center">
 <article align="center">
@@ -179,10 +218,52 @@ echo "<a href='deleteRecord.php?id=". $v."&&tablename=" . $tb."' title='Delete R
                     // Close connection
 					
                     mysqli_close($link);
+					include "gbtn.php";
                     ?>
-					
                     <a href="viewTable.php" class="w3-button">Back</a></article></section>
  
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	<div align="center">
+    <p>&nbsp;&nbsp;&nbsp;Please enter the name of system : </p>
+	<form action="gg.php" method="post"><input type="text" name="name"><br>
+	<input class="w3-button" type="submit" value="Submit" name="submit" >
+	</form>
+	</div>
+  </div>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
 </body>
 </html>

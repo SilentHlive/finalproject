@@ -10,34 +10,34 @@ $n = $id;
 //echo $n;
 $name;
 $name= $_POST["name"];
-$email= $_POST["email"];
+$quantity= $_POST["quantity"];
 if(empty($n)){ echo "hello";
 if(!empty($name)){echo $name;
-$sql = "INSERT INTO staff (name) VALUES ('$name')";
+$sql = "INSERT INTO inventory (name) VALUES ('$name')";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
-$sql = "UPDATE staff SET name= '$name' WHERE name= '$name'";
+$sql = "UPDATE inventory SET name= '$name' WHERE name= '$name'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
-$sql = "UPDATE staff SET email= '$email' WHERE name= '$name'";
+$sql = "UPDATE inventory SET quantity= '$quantity' WHERE name= '$name'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 }}
 else {echo "bye";
-$sql = "INSERT INTO staff (id) VALUES ('$id')";
+$sql = "INSERT INTO inventory (id) VALUES ('$id')";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 echo $n;
-$sql = "UPDATE staff SET name= '$name' WHERE id= '$id'";
+$sql = "UPDATE inventory SET name= '$name' WHERE id= '$id'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 
-$sql = "UPDATE staff SET email= '$email' WHERE id= '$id'";
+$sql = "UPDATE inventory SET quantity= '$quantity' WHERE id= '$id'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
@@ -45,5 +45,5 @@ else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 } }else echo "hello!!";
 mysqli_close($link);
 
-header ("location: viewRecord.php?tablename=staff");
+header ("location: viewRecord.php?tablename=inventory");
 ?>

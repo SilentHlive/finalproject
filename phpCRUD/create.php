@@ -93,7 +93,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico" />
-<title>PHP CRUD GENERATOR</title>
+<?php include "title.php";?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <style>
