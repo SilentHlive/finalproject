@@ -6,9 +6,12 @@
 if(isset($_GET["tablename"]) && !empty(trim($_GET["tablename"]))){
     // Include config file
     require_once "config.php";
-  
-   
- 
+}
+else {
+$myfile = fopen("table.txt", "r") or die("Unable to open file!");
+$table = fread($myfile,filesize("table.txt"));
+$tb = $table;
+header ("location: viewRecord.php?tablename=".$tb."");
 }
 ?>
 <head>
@@ -18,117 +21,8 @@ if(isset($_GET["tablename"]) && !empty(trim($_GET["tablename"]))){
 <?php include "title.php";?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <style>
-		  body {
-  background-color: #F3D250;
-}
-	  header {
-   text-align: center;
-   padding: 20px;
-   color: white;}
- div h2 {
- font-family:Palatino Linotype;
-font-size: 70px;
-  margin-top:80px;
-  text-align: center;
-  padding: 20px;
-  color: white;
-}
-article {
-	border-style: double;
-	border-radius: 8px;
-	float: center;
-	margin-right : 200px;
-	margin-left : 200px;
-	background-color:#F66;
-	height: auto; /* only for demonstration, should be removed */
-	
-}
-/* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.w3-button {width:150px;
-height: 40px;
-margin-top: 50px;
-margin-bottom: 20px;
-box-shadow: 0px 10px 14px -7px #276873;
-background:linear-gradient(to bottom, #F78888 5%, #Ececec 200%);
-background-color:#F78888;
-border-radius:8px;
-display:inline-block;
-cursor:pointer;
-color:#ffffff;
-font-family:Arial;
-font-size:15px;
-text-decoration:none;
-text-shadow:0px 1px 0px #3d768a;
-}
-.w3-button:hover {
-	background:linear-gradient(to bottom, #5da2d5 5%, #90CCf4 100%);
-	background-color:#5da2d5;
-}
-.w3-button:active {
-	position:relative;
-	top:1px;
-}
-table, th, td {
-  margin-top:5px;
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-  font-family: "Times New Roman", Times, serif;
-font-size: 20px;
-padding-left:10px;
-padding-right:10px;
- text-transform: uppercase;
-}
-.title{
-  font-family: "Times New Roman", Times, serif;
-font-size: 20px;
-}
+    <link rel="stylesheet" href="http://localhost/phpCRUD/style/index.css">
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 150px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-   </style>
 </head>
 <body>
 <header><div>
@@ -139,10 +33,17 @@ font-size: 20px;
 <article align="center">
 <div class="title"><h3>View Record</h3>
 	
-	Table Name: <?php echo $_GET["tablename"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"; ?> 
+		Table Name: <?php if (empty($_GET["tablename"])) {
+			$myfile = fopen("table.txt", "r") or die("Unable to open file!");
+  echo fread($myfile,filesize("table.txt"));
+	} else {echo $_GET["tablename"];}?> 
 
   <?php
-  $tb = $_GET["tablename"];
+ if (empty($_GET["tablename"])) {
+		$myfile = fopen("table.txt", "r") or die("Unable to open file!");
+$table = fread($myfile,filesize("table.txt"));
+$tb = $table;
+	} else { $tb = $_GET["tablename"];}
  
    // Include config file
  require_once "config.php";
@@ -217,10 +118,10 @@ echo "<a href='deleteRecord.php?id=". $v."&&tablename=" . $tb."' title='Delete R
                              echo "</table>";
                     // Close connection
 					
-                    mysqli_close($link);
+                    
 					include "gbtn.php";
                     ?>
-                    <a href="viewTable.php" class="w3-button">Back</a></article></section>
+                     <a href="viewTable.php" class="w3-button">Back</a></article></section>
  
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -231,12 +132,13 @@ echo "<a href='deleteRecord.php?id=". $v."&&tablename=" . $tb."' title='Delete R
 	<div align="center">
     <p>&nbsp;&nbsp;&nbsp;Please enter the name of system : </p>
 	<form action="gg.php" method="post"><input type="text" name="name"><br>
+	<input type="hidden" name="table" value="<?php echo $tb; ?>">
 	<input class="w3-button" type="submit" value="Submit" name="submit" >
 	</form>
 	</div>
   </div>
-
 </div>
+<?php mysqli_close($link);?>
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");

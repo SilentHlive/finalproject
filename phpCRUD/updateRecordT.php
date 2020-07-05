@@ -6,19 +6,19 @@ $result = mysqli_query($link,$sql);while($row = mysqli_fetch_array($result)){//e
 $primary= $row['COLUMN_NAME'];}
 if($_SERVER["REQUEST_METHOD"] == "POST"){$name= $_POST["name"];
 if(empty($name)){echo "empty";}
-$sql = "UPDATE inventory SET name= '$name' WHERE $primary = '1'";
+$sql = "UPDATE staff SET name= '$name' WHERE $primary = '1'";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 
-$quantity= $_POST["quantity"];
-if(empty($quantity)){echo "empty";}
-$sql = "UPDATE inventory SET quantity= '$quantity' WHERE $primary = '1'";
+$email= $_POST["email"];
+if(empty($email)){echo "empty";}
+$sql = "UPDATE staff SET email= '$email' WHERE $primary = '1'";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 
 
-header ("location: viewRecord.php?tablename=inventory");
+header ("location: viewRecord.php?tablename=staff");
 }mysqli_close($link);
 ?>

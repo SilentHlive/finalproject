@@ -1,0 +1,126 @@
+
+	  body {
+  background-color: #F3D250;
+}
+div h2 {
+font-family: Palatino Linotype;
+font-size: 70px;
+  margin-top:100px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+ 
+.text {
+font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+text-align: center;
+	float: center;
+}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.w3-button {width:150px;
+height: 40px;
+margin-top: 80px;
+box-shadow: 0px 10px 14px -7px #276873;
+background:linear-gradient(to bottom, #F78888 5%, #Ececec 200%);
+background-color:#F78888;
+border-radius:8px;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:15px;
+text-decoration:none;
+text-shadow:0px 1px 0px #3d768a;
+}
+.w3-button:hover {
+	background:linear-gradient(to bottom, #5da2d5 5%, #90CCf4 100%);
+	background-color:#5da2d5;
+}
+.w3-button:active {
+	position:relative;
+	top:1px;
+}
+   
+   table, th, td {
+  margin-top:5px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+padding-left:10px;
+padding-right:10px;
+text-transform: capitalize;
+}
+
+article {
+	border-style: double;
+	border-radius: 8px;
+	float: center;
+	margin-right : 200px;
+	margin-left :200px;
+	padding-bottom:20px;
+	background-color:#F66;
+
+}
+
+input {
+	margin-bottom:4px;
+	font-family: "Times New Roman", Times, serif;
+font-size: 20px;}
+   
+label {
+    padding-left:5px;
+    width:125px;
+    text-transform: uppercase;
+    display:inline-block;
+	text-align: left ;
+	font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+text-transform: capitalize;
+
+} 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

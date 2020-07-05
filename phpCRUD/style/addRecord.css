@@ -1,0 +1,83 @@
+	  body {
+  background-color: #F3D250;
+}
+	  header {
+   text-align: center;
+   padding: 20px;
+   color: white;}
+ div h2 {
+ font-family:Palatino Linotype;
+font-size: 70px;
+  margin-top:80px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+article {
+	border-style: double;
+	border-radius: 8px;
+	float: center;
+	margin-right : 200px;
+	margin-left : 200px;
+	background-color:#F66;
+	height: auto; /* only for demonstration, should be removed */
+	
+}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.w3-button {width:150px;
+height: 40px;
+margin-top: 50px;
+margin-bottom: 20px;
+box-shadow: 0px 10px 14px -7px #276873;
+background:linear-gradient(to bottom, #F78888 5%, #Ececec 200%);
+background-color:#F78888;
+border-radius:8px;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:15px;
+text-decoration:none;
+text-shadow:0px 1px 0px #3d768a;
+}
+.w3-button:hover {
+	background:linear-gradient(to bottom, #5da2d5 5%, #90CCf4 100%);
+	background-color:#5da2d5;
+}
+.w3-button:active {
+	position:relative;
+	top:1px;
+}
+table, th, td {
+  font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+padding-left:50px;
+padding-right:50px;
+padding-top:5px;
+padding-bottom:5px;
+}
+input {
+	margin-bottom:4px;
+	font-family: "Times New Roman", Times, serif;
+font-size: 20px;}
+
+label {
+    padding-left:5px;
+    width:125px;
+    text-transform: uppercase;
+    display:inline-block;
+	text-align: left ;
+	font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+
+}
+.title{
+	font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+}

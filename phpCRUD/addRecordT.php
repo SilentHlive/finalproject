@@ -10,34 +10,44 @@ $n = $id;
 //echo $n;
 $name;
 $name= $_POST["name"];
-$quantity= $_POST["quantity"];
+$email= $_POST["email"];
+$phoneno= $_POST["phoneno"];
 if(empty($n)){ echo "hello";
 if(!empty($name)){echo $name;
-$sql = "INSERT INTO inventory (name) VALUES ('$name')";
+$sql = "INSERT INTO staff (name) VALUES ('$name')";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
-$sql = "UPDATE inventory SET name= '$name' WHERE name= '$name'";
+$sql = "UPDATE staff SET name= '$name' WHERE name= '$name'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
-$sql = "UPDATE inventory SET quantity= '$quantity' WHERE name= '$name'";
+$sql = "UPDATE staff SET email= '$email' WHERE name= '$name'";
+if (mysqli_query($link, $sql)) {
+echo "New record updated successfully";}
+else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
+$sql = "UPDATE staff SET phoneno= '$phoneno' WHERE name= '$name'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 }}
 else {echo "bye";
-$sql = "INSERT INTO inventory (id) VALUES ('$id')";
+$sql = "INSERT INTO staff (id) VALUES ('$id')";
 if (mysqli_query($link, $sql)) {
 echo "New record created successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 echo $n;
-$sql = "UPDATE inventory SET name= '$name' WHERE id= '$id'";
+$sql = "UPDATE staff SET name= '$name' WHERE id= '$id'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 
-$sql = "UPDATE inventory SET quantity= '$quantity' WHERE id= '$id'";
+$sql = "UPDATE staff SET email= '$email' WHERE id= '$id'";
+if (mysqli_query($link, $sql)) {
+echo "New record updated successfully";}
+else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
+
+$sql = "UPDATE staff SET phoneno= '$phoneno' WHERE id= '$id'";
 if (mysqli_query($link, $sql)) {
 echo "New record updated successfully";}
 else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
@@ -45,5 +55,5 @@ else {echo "Error: " . $sql . "<br>" . mysqli_error($link);}
 } }else echo "hello!!";
 mysqli_close($link);
 
-header ("location: viewRecord.php?tablename=inventory");
+header ("location: viewRecord.php?tablename=staff");
 ?>
