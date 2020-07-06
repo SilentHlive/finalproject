@@ -9,7 +9,7 @@
   <tr><td>4.</td><td>Test Plan</td><td>https://github.com/SilentHlive/finalproject/blob/master/documentation/testplan.docx</td></tr>
   <tr><td>5.</td><td>Field Testing</td><td>https://github.com/SilentHlive/finalproject/blob/master/documentation/field_testing_report.pdf</td></tr>
   <tr><td>6.</td><td>Poster</td><td>https://github.com/SilentHlive/finalproject/blob/master/documentation/project2poster.pdf</td></tr>
-   <tr><td>7.</td><td>Final Demo</td><td></td></tr>
+   <tr><td>7.</td><td>Final Demo</td><td>https://youtu.be/lTvthm-UNmM</td></tr>
 </table>
 
 
