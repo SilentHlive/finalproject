@@ -14,4 +14,4 @@
 
 
 
-<h7>Not completed yet.</h7>
+<h7>70% completed.</h7>
